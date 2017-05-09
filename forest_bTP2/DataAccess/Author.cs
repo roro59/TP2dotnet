@@ -29,5 +29,25 @@ namespace forest_bTP2.DataAccess
             qerry.ToList().ForEach(e => a.Add(new Dbo.Author(e.Name, e.Firstname)));
             return a;
         }
+
+        public bool Add(Dbo.Author e)
+        {
+            try
+            {
+                var t = new T_Author
+                {
+                    Firstname = e.Firstname,
+                    Name = e.Name
+                };
+                Context.T_Author.Add(t);
+                Context.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
     }
 }

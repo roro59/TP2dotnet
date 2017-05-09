@@ -17,7 +17,7 @@ namespace forest_bTP2.Dbo
 
         public long Id { get; set; }
         public string Title { get; set; }
-        public Nullable<DateTime> Publication { get; set; }
+        public DateTime? Publication { get; set; }
         public long Idauthor { get; set; }
         
     }
