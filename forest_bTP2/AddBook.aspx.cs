@@ -13,5 +13,18 @@ namespace forest_bTP2
         {
 
         }
+
+        protected void add(object sender, EventArgs eventArgs)
+        {
+            var listAuthors = BuisnessManagement.Author.ListAuthors();
+            Dbo.Author a = listAuthors[0];
+            foreach (Dbo.Author t in listAuthors)
+            {
+                if (t.Name == TextBox2.Text)
+                    a = t;
+            }
+            var book = new Dbo.Book(0, TextBox1.Text, Calendar1.SelectedDate, a.id);
+            BuisnessManagement.Book.AddBook(book);
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace forest_bTP2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            GridView1.DataSource = BuisnessManagement.Author.ListAuthors();
+            GridView1.DataBind();
         }
     }
 }

@@ -26,7 +26,7 @@ namespace forest_bTP2.DataAccess
             var a = new List<Dbo.Author>();
             var qerry = from tmp in Context.T_Author
                 select tmp;
-            qerry.ToList().ForEach(e => a.Add(new Dbo.Author(e.Name, e.Firstname)));
+            qerry.ToList().ForEach(e => a.Add(new Dbo.Author(e.Name, e.Firstname, e.Id)));
             return a;
         }
 

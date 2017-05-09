@@ -12,11 +12,19 @@ namespace forest_bTP2.Dbo
     {
         public string Name { get; set; }
         public string Firstname { get; set; }
+        public long id { get; set; }
         public Author(string name, string firstname)
         {
             this.Name = name;
             this.Firstname = firstname;
 
+        }
+
+        public Author(string name, string firstname, long id)
+        {
+            Name = name;
+            Firstname = firstname;
+            this.id = id;
         }
     }
 }
