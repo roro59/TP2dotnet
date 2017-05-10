@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using Microsoft.ApplicationInsights.WindowsServer;
+
 
 namespace forest_bTP2.DataAccess
 {
     public class Book : IDisposable
     {
-        public ModelTP Context { get; set; }
+        public DataAccess.IdotTP2Entities1 Context { get; set; }
         public void Dispose()
         {
             Context.Dispose();
@@ -20,15 +19,23 @@ namespace forest_bTP2.DataAccess
 
         public void Initializer()
         {
-            Context = new ModelTP();
+            Context = new IdotTP2Entities1();
         }
 
         public List<Dbo.Book> ReadBooks()
         {
             var a = new List<Dbo.Book>();
-            var qerry = from tmp in Context.T_Book
-                select tmp;
-            qerry.ToList().ForEach(e => a.Add(new Dbo.Book(e.Id, e.Title, e.Publication, e.IdAuthor)));
+            try
+            {
+                var qerry = from tmp in Context.T_Book 
+                             select tmp;
+                qerry.ToList().ForEach(e => a.Add(new Dbo.Book(e.Id, e.Title, e.Publication, e.IdAuthor)));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
             return a;
         }
 

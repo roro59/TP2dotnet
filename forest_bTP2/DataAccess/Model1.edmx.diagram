@@ -4,8 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b7e1cfc492204b4a89ecf7dfe3c43277" Name="Diagram1">
-        <EntityTypeShape EntityType="IdotTP2Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="false" />
+      <Diagram DiagramId="ee30ca1702df47e0b68197593527d798" Name="Diagram1">
+        <EntityTypeShape EntityType="IdotTP2Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="IdotTP2Model.T_Author" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="IdotTP2Model.T_Book" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
         <AssociationConnector Association="IdotTP2Model.FK_T_Book_T_Author" ManuallyRouted="false" />

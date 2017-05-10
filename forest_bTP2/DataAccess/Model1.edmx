@@ -99,7 +99,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelTP" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="IdotTP2Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="T_Author" EntityType="Self.T_Author" />
           <EntitySet Name="T_Book" EntityType="Self.T_Book" />
@@ -113,7 +113,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="IdotTP2ModelStoreContainer" CdmEntityContainer="ModelTP">
+        <EntityContainerMapping StorageEntityContainer="IdotTP2ModelStoreContainer" CdmEntityContainer="IdotTP2Entities1">
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="IdotTP2Model.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">

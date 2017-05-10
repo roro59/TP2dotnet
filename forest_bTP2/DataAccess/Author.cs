@@ -8,14 +8,14 @@ namespace forest_bTP2.DataAccess
 {
     public class Author : IDisposable
     {
-        public DataAccess.ModelTP Context { get; set; }
+        public DataAccess.IdotTP2Entities1 Context { get; set; }
         public void Dispose()
         {
             Context.Dispose();
         }
         public void Initializer()
         {
-            Context = new ModelTP();
+            Context = new IdotTP2Entities1();
         }
         public Author()
         {
@@ -24,9 +24,17 @@ namespace forest_bTP2.DataAccess
         public List<Dbo.Author> ListAuthors()
         {
             var a = new List<Dbo.Author>();
-            var qerry = from tmp in Context.T_Author
-                select tmp;
-            qerry.ToList().ForEach(e => a.Add(new Dbo.Author(e.Name, e.Firstname, e.Id)));
+            try
+            {
+                var qerry = from tmp in Context.T_Author
+                            select tmp;
+                qerry.ToList().ForEach(e => a.Add(new Dbo.Author(e.Name, e.Firstname, e.Id)));
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine(e.Message);
+            }
             return a;
         }
 
@@ -34,7 +42,7 @@ namespace forest_bTP2.DataAccess
         {
             try
             {
-                var t = new T_Author
+                T_Author t = new T_Author()
                 {
                     Firstname = e.Firstname,
                     Name = e.Name

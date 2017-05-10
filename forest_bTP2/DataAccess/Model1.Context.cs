@@ -13,10 +13,10 @@ namespace forest_bTP2.DataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ModelTP : DbContext
+    public partial class IdotTP2Entities1 : DbContext
     {
-        public ModelTP()
-            : base("name=ModelTP")
+        public IdotTP2Entities1()
+            : base("name=IdotTP2Entities1")
         {
         }
     

@@ -20,5 +20,11 @@ namespace forest_bTP2
            
         }
 
+        protected void addA(object sender, EventArgs e)
+        {
+            BuisnessManagement.Author.AddAuthors(new Dbo.Author("dede", "slt"));
+            BuisnessManagement.Author.AddAuthors(new Dbo.Author("dada", "mana"));
+
+        }
     }
 }
